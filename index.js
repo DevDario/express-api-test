@@ -9,3 +9,17 @@ const pool = mysql.createPool({
     password:'',
     database:'products'
 })
+
+//GET
+app.get('/products', async(req, res)=>{
+
+    try{
+
+        const [rows] = await pool.query('SELECT * FROM product')
+        res.json(rows)
+        
+    }catch(error){
+        res.status(500).json({message:'Error retrieving products'})
+    }
+
+})
