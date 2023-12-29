@@ -1,0 +1,12 @@
+{
+  "name": "express-api",
+  "version": "1.0.0",
+  "description": "Learning to create Express API's",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["API","Express","Express-API","mysql"],
+  "author": "Dário Silva",
+  "license": "MIT"
+}
