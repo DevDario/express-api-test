@@ -6,7 +6,16 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": ["API","Express","Express-API","mysql"],
+  "keywords": [
+    "API",
+    "Express",
+    "Express-API",
+    "mysql"
+  ],
   "author": "Dário Silva",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1"
+  }
 }

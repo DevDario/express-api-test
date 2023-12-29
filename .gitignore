@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Compiled JavaScript files
+dist/
+
+# TypeScript source files, if not part of your version control
+src/
+
+# Environment variables file (if applicable)
+.env
+
+# Testing directory (if applicable)
+test/
+
+# Build artifacts (if applicable)
+build/
+
+# Documentation directory (if applicable)
+docs/
+
+# Temporary files
+tmp/
+
+# Editor configuration files
+.vscode/
+.idea/
+
+# Operating system-specific files
+Thumbs.db
+.DS_Store
