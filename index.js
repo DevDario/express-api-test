@@ -23,3 +23,19 @@ app.get('/products', async(req, res)=>{
     }
 
 })
+
+//POST
+app.post('/products', async(req,res)=>{
+
+    const { product_name, product_price } = req.body
+
+    try{
+
+        await pool.query('INSERT INTO product(product_name, product_price) VALUES(?, ?)',[product_name, product_price])
+        res.status(201).json({message: 'Product Created Successfully !'})
+
+    }catch(error){
+        res.status(500).json({message: 'Error Creating the product'})
+    }
+
+})
