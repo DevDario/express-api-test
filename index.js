@@ -39,3 +39,11 @@ app.post('/products', async(req,res)=>{
     }
 
 })
+
+//START THE SERVER
+
+const PORT = 3000
+
+app.listen(PORT,()=>{
+    console.log(`Server Listening or port ${PORT}`)
+})
