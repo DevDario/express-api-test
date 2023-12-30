@@ -22,7 +22,9 @@ app.post('/api/newUser', async (req, res) => {
 
     try {
 
-        users.push(name)
+        const user = {name:name}
+
+        users.push(user)
 
         res.status(201).json({ message: 'User Created Successfully !' })
 
@@ -40,7 +42,7 @@ app.post('/api/newUser', async (req, res) => {
 const PORT = 3000
 
 app.listen(PORT, () => {
-    console.log(`Server Listening or port ${PORT}`)
+    console.log(`Server Listening on port ${PORT}`)
 })
 
 const cors = require('cors')
