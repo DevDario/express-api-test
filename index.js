@@ -42,3 +42,6 @@ const PORT = 3000
 app.listen(PORT, () => {
     console.log(`Server Listening or port ${PORT}`)
 })
+
+const cors = require('cors')
+app.use(cors())
