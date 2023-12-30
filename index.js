@@ -1,41 +1,36 @@
 const express = require('express')
 const app = express()
-
-const mysql = require('mysql')
-
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password:'',
-    database:'products'
-})
+const users = []
 
 //GET
-app.get('/products', async(req, res)=>{
+app.get('/api/users', async (req, res) => {
 
-    try{
+    try {
 
-        const [rows] = await pool.query('SELECT * FROM product')
-        res.json(rows)
-        
-    }catch(error){
-        res.status(500).json({message:'Error retrieving products'})
+        res.json(users)
+
+    } catch (error) {
+        res.status(500).json({ message: 'Error retrieving users' })
     }
 
 })
 
 //POST
-app.post('/products', async(req,res)=>{
+app.post('/api/newUser', async (req, res) => {
 
-    const { product_name, product_price } = req.body
+    const { name } = req.body
 
-    try{
+    try {
 
-        await pool.query('INSERT INTO product(product_name, product_price) VALUES(?, ?)',[product_name, product_price])
-        res.status(201).json({message: 'Product Created Successfully !'})
+        users.push(name)
 
-    }catch(error){
-        res.status(500).json({message: 'Error Creating the product'})
+        res.status(201).json({ message: 'User Created Successfully !' })
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({ message: 'Error Creating the User' })
     }
 
 })
@@ -44,6 +39,6 @@ app.post('/products', async(req,res)=>{
 
 const PORT = 3000
 
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Server Listening or port ${PORT}`)
 })
