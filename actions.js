@@ -4,7 +4,7 @@ form.addEventListener('submit', async (e) => {
 
     e.preventDefault()
 
-    const name = String(document.getElementById('name-input').value)
+    const name = document.getElementById('name-input').value
 
     if (name === "") return alert("You need to add a name")
 
