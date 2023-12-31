@@ -16,7 +16,7 @@ app.get('/api/users', async (req, res) => {
 })
 
 //POST
-app.post('/api/newUser', async (req, res) => {
+app.post('/api/new', async (req, res) => {
 
     const { name } = req.body
 
