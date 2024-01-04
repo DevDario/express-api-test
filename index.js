@@ -1,9 +1,14 @@
 const express = require('express')
 const app = express()
+const cors = require('cors')
+
+app.use(express.json())
+app.use(cors())
+
 const users = []
 
 //GET
-app.get('/api/users', async (req, res) => {
+app.get('/api/users', (req, res) => {
 
     try {
 
@@ -16,13 +21,14 @@ app.get('/api/users', async (req, res) => {
 })
 
 //POST
-app.post('/api/new', async (req, res) => {
+app.post('/api/new', (req, res) => {
 
-    const { name } = req.body
-
+    
     try {
 
-        const user = {name:name}
+        const { name } = req.body
+
+        const user = { name : name}
 
         users.push(user)
 
@@ -44,6 +50,3 @@ const PORT = 3000
 app.listen(PORT, () => {
     console.log(`Server Listening on port ${PORT}`)
 })
-
-const cors = require('cors')
-app.use(cors())
