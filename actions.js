@@ -9,7 +9,7 @@ form.addEventListener('submit', async (e) => {
     if (name === "") return alert("You need to add a name")
 
     try {
-        const response = await fetch('/api/new', {
+        const response = await fetch('/new', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
