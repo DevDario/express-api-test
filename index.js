@@ -8,7 +8,7 @@ app.use(cors())
 const users = []
 
 //GET
-app.get('/api/users', (req, res) => {
+app.get('/users', (req, res) => {
 
     try {
 
@@ -22,7 +22,7 @@ app.get('/api/users', (req, res) => {
 })
 
 //POST
-app.post('/api/new', (req, res) => {
+app.post('/new', (req, res) => {
 
     
     try {
