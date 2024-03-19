@@ -4,6 +4,7 @@
   "description": "Learning to create Express API's",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./index.js",
     "test": "jest"
   },
   "keywords": [
