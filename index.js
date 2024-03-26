@@ -36,10 +36,8 @@ app.post('/new', (req, res) => {
         res.status(201).json({ message: 'User Created Successfully !' })
 
     } catch (error) {
-        console.error(error);
 
         console.log(error);
-
         res.status(500).json({ message: 'Error Creating the User' })
     }
 
